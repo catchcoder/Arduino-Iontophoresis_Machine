@@ -1,15 +1,15 @@
 
 
 // Iontophoresis Electro Antiperspirant v3.5
-// Code and Ciruit by Chris Hawkins 2014 - Updated 2020
+// Code and Circuit by Chris Hawkins 2014 - Updated 2020
 //
-#define ledPWR 13
-#define button  12
-#define phasePolA 7 //LE9
-#define phasePolB 8 //LED
+#define ledPWR 13 //PowerLED
+#define button  12 //Start/Stop button
+#define phasePolA 7 //LED stage 1
+#define phasePolB 8 //LED Stage 2
 #define pwrForward 9 // Trigger A
 #define pwrBackward 10 // trigger B reverse polarity
-#define phaseDuration 1200000 // duration for each hand /60 = ?? minutes
+#define phaseDuration 900000 // duration for each hand default 15 minutes (for 20 minutes =1200000)
 
 int phaseNumber = 0 ;
 unsigned long lastpressed = 0;
@@ -105,9 +105,6 @@ void loop() {
   }
 
   if (ulngTimer  > 0 ) {
-    //Serial.print ("ulngtimer check\n\n");
-    //CHEKC TIME
-
 
     if (phaseNumber == 1) {
 
